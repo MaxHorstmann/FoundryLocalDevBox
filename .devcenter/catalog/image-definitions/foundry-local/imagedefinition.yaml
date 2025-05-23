@@ -9,7 +9,7 @@ tasks:
     parameters:
       command: |
           $downloadUrl = "https://github.com/microsoft/Foundry-Local/releases/download/v0.3.9267/FoundryLocal-x64-0.3.9267.43123.msix"
-          $localPath = "$env:TEMP\FoundryLocal-x64-0.3.9267.43123.msix"
+          $localPath = Join-Path -Path $env:TEMP -ChildPath FoundryLocal.msix
           Write-Host "Downloading Foundry Local from $downloadUrl"
           Invoke-WebRequest -Uri $downloadUrl -OutFile $localPath
           Write-Host "Installing Foundry Local from $localPath"
