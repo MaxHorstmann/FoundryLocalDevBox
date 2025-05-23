@@ -8,10 +8,14 @@ tasks:
     description: Install Foundry Local
     parameters:
       command: |
-          # Install Foundry Local
           $downloadUrl = "https://github.com/microsoft/Foundry-Local/releases/download/v0.3.9267/FoundryLocal-x64-0.3.9267.43123.msix"
           $localPath = "$env:TEMP\FoundryLocal-x64-0.3.9267.43123.msix"
           Write-Host "Downloading Foundry Local from $downloadUrl"
           Invoke-WebRequest -Uri $downloadUrl -OutFile $localPath
           Write-Host "Installing Foundry Local from $localPath"
           Add-AppxPackage -Path $localPath
+
+  - name: ~/powershell
+    description: Download a model
+    parameters:
+      command: foundry model download Phi-4-generic-cpu
