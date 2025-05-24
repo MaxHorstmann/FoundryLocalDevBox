@@ -6,6 +6,7 @@ description: "Installs Azure Foundry Local"
 tasks:
   - name: ~/powershell
     description: Install Foundry Local
+    timeout: 7200
     parameters:
       command: |
           # Download the package and its dependency
