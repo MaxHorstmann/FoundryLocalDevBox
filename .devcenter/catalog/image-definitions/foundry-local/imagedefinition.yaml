@@ -16,7 +16,7 @@ tasks:
           Invoke-WebRequest -Method Get -Uri $crtUri -OutFile .\VcLibs.appx
 
           # Install the Foundry Local package
-          Add-AppxProvisionedPackage -Online -PackagePath .\FoundryLocal.msix -DependencyPath .\VcLibs.appx -SkipLicense
+          Add-AppxProvisionedPackage -Online -PackagePath .\FoundryLocal.msix -DependencyPackagePath .\VcLibs.appx -SkipLicense
 
   - name: ~/powershell
     description: Download a model
